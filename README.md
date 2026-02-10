@@ -30,15 +30,15 @@ Provides a simple interface for implementing byte signature prefix lookup suppor
 
 <hr>
 
-### `(*temp) Get() *table`
+### `(*temp) Get() *Table`
 **Description:** Builds and returns the lookup table.
 
 **Returns:**
-- `*table`
+- `*Table`
 
 <hr>
 
-### `(*table) Find(b []byte) (any, bool)`
+### `(*Table) Find(b []byte) (any, bool)`
 **Description:** Tries to match the longest pattern provided matching the beginning of `b`, after which it returns the desired result and lookup success.
 
 **Args:**

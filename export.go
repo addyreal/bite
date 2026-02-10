@@ -7,7 +7,7 @@ import (
 type temp struct {
 	rules []*rule.Rule
 }
-type table struct {
+type Table struct {
 	anchor [256][]*rule.Rule
 }
 
@@ -33,8 +33,8 @@ func (x *temp) Add(res any, pattern ...int) {
 	x.rules = append(x.rules, rule.Make(res, pattern))
 }
 
-func (x *temp) Get() *table {
-	res := &table{}
+func (x *temp) Get() *Table {
+	res := &Table{}
 
 	rule.Sort(x.rules)
 
@@ -46,7 +46,7 @@ func (x *temp) Get() *table {
 	return res
 }
 
-func (t *table) Find(b []byte) (any, bool) {
+func (t *Table) Find(b []byte) (any, bool) {
 	if len(b) == 0 {
 		return nil, false
 	}
